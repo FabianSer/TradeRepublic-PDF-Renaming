@@ -12,8 +12,8 @@ def get_naming(file_name):
     pdfFile.close()
     ISIN = re.search(r"(?<=ISIN: ).*?(?=\s)", pdfContent)[0]
     DATUM = re.search(r"(?<=DATUM\n).*?(?=\n)", pdfContent)[0]
-    DATRUM_formatted = DATUM[-4:]+DATUM[3:5]+DATUM[:2]
-    return DATRUM_formatted+'_'+ISIN+'.pdf'
+    DATUM_formatted = DATUM[-4:]+DATUM[3:5]+DATUM[:2]
+    return DATUM_formatted+'_'+ISIN+'.pdf'
 
 
 all_files = (os.listdir('./input/'))
