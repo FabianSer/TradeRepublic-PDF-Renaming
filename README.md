@@ -2,7 +2,7 @@
 
 ## Getting started
 
-This repository is currently limited to use under Windows and takes into account the current structure of TrateRepublic invoices. Also, this script works only for German-language invoices.
+This repository is currently limited to use under Windows and takes into account the current structure of TradeRepublic invoices. Also, this script works only for German-language invoices.
 
 ### Required Software and Tools
 
