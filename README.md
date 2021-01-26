@@ -6,7 +6,7 @@ This repository is currently limited to use under Windows and takes into account
 
 ### Required Software and Tools
 
-* [Python 3.8](https://www.python.org/downloads/)
+* [Python 3.9](https://www.python.org/downloads/)
 * [Pipenv](https://docs.pipenv.org/en/latest/)
 
 ### Usage
