@@ -13,10 +13,11 @@ def get_naming(file_name):
     ISIN = re.search(r"(?<=ISIN: ).*?(?=\s)", pdfContent)[0]
     DATUM = re.search(r"(?<=DATUM\n).*?(?=\n)", pdfContent)[0]
     DATRUM_formatted = DATUM[-4:]+DATUM[3:5]+DATUM[:2]
-    return ISIN+'_'+DATRUM_formatted+'.pdf'
+    return DATRUM_formatted+'_'+ISIN+'.pdf'
 
 
 all_files = (os.listdir('./input/'))
+all_files.remove('.gitkeep')
 
 for file_name in all_files:
     new_file_name = get_naming(file_name)
