@@ -1,4 +1,4 @@
-# Exersice 2.2
+# PDF Renaming
 
 ## Getting started
 
