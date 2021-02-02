@@ -17,7 +17,6 @@ def get_naming(file_name):
 
 
 all_files = (os.listdir('./input/'))
-all_files.remove('.gitkeep')
 
 for file_name in all_files:
     new_file_name = get_naming(file_name)
