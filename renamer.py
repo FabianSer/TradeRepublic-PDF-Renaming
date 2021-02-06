@@ -10,10 +10,16 @@ def get_naming(file_name):
     pdfReader = PdfFileReader(pdfFile)
     pdfContent = pdfReader.getPage(0).extractText()
     pdfFile.close()
-    ISIN = re.search(r"(?<=ISIN: ).*?(?=\s)", pdfContent)[0]
+    ISIN = re.search(r"(?<=ISIN:)\s*(.*?)(?=\s)", pdfContent)
     DATUM = re.search(r"(?<=DATUM\n).*?(?=\n)", pdfContent)[0]
     DATUM_formatted = DATUM[-4:]+DATUM[3:5]+DATUM[:2]
-    return DATUM_formatted+'_'+ISIN+'.pdf'
+    base = './output/' + DATUM_formatted + (('_'+ISIN[1]) if ISIN else '')
+    if os.path.exists(base+'.pdf'):
+        i = 1
+        while os.path.exists(base+'_'+str(i)+'.pdf'):
+            i += 1
+        return base+'_'+str(i)+'.pdf'
+    return base+'.pdf'
 
 
 all_files = (os.listdir('./input/'))
